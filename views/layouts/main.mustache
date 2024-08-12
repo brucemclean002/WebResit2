@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="flex-container">
+        <header>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/items">Items</a>
+                {{#user}}
+                {{#isVolunteerOrManager}}
+                <a href="/items/manage">Manage Items</a>
+                {{/isVolunteerOrManager}}
+                {{#isManager}}
+                <a href="/admin">Admin Dashboard</a>
+                {{/isManager}}
+                <a href="/auth/logout">Logout ({{user.email}})</a>
+                {{/user}}
+                {{^user}}
+                <a href="/auth/login">Login</a>
+                {{/user}}
+            </nav>
+        </header>
+        <main class="content">
+            {{{body}}} <!-- Page content goes here -->
+        </main>
+        <footer>
+            <p>© 2024 Your Website. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

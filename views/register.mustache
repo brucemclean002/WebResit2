@@ -1,0 +1,15 @@
+<h1>Register</h1>
+
+{{#error}}
+    <div class="error-message">
+        <p>{{error}}</p>
+    </div>
+{{/error}}
+
+<form method="POST" action="/auth/register">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <button type="submit">Register</button>
+</form>

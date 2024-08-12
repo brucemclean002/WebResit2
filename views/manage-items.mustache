@@ -1,0 +1,50 @@
+<h1>Manage Items</h1>
+
+{{#isVolunteerOrManager}}
+    <h2>Add New Item</h2>
+    <form method="POST" action="/items/add">
+        <label for="name">Item Name:</label>
+        <input type="text" name="name" id="name" required>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required></textarea>
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" step="0.01" min="0.01" required>
+        <label for="store">Store Location:</label>
+        <input type="text" name="store" id="store" required>
+        <button type="submit">Add Item</button>
+    </form>
+    <hr>
+{{/isVolunteerOrManager}}
+
+{{#error}}
+    <p style="color: red;">{{error}}</p>
+{{/error}}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Store</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#items}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{description}}</td>
+            <td>{{price}}</td>
+            <td>{{store}}</td>
+            <td>
+                <a href="/items/edit/{{_id}}">Edit</a>
+                {{#isVolunteerOrManager}}
+                <form method="POST" action="/items/delete/{{_id}}" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                {{/isVolunteerOrManager}}
+            </td>
+        </tr>
+        {{/items}}
+    </tbody>
+</table>

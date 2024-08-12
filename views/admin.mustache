@@ -1,0 +1,50 @@
+<h1>Admin Dashboard</h1>
+
+{{#error}}
+    <div class="error-message">
+        <p>{{error}}</p>
+    </div>
+{{/error}}
+
+<!-- Add User Form -->
+<form method="POST" action="/admin/add-user">
+    <h2>Add User</h2>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <label for="role">Role:</label>
+    <select name="role" id="role">
+        <option value="user">User</option>
+        <option value="volunteer">Volunteer</option>
+        <option value="manager">Manager</option>
+    </select>
+    <button type="submit">Add User</button>
+</form>
+
+<hr>
+
+<!-- Existing Users Table -->
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#users}}
+        <tr>
+            <td>{{email}}</td>
+            <td>{{role}}</td>
+            <td>
+                <a href="/admin/edit/{{_id}}">Edit</a>
+                <form method="POST" action="/admin/delete/{{_id}}" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {{/users}}
+    </tbody>
+</table>

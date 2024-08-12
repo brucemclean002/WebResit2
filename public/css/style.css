@@ -1,0 +1,129 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f6f1;
+    color: #333;
+}
+
+header {
+    background-color: #4b3621; /* Dark Brown */
+    padding: 10px 20px;
+    color: #f4ede4; /* Light Beige */
+}
+
+header nav a {
+    color: #f4ede4;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.content {
+    flex: 1;
+    padding: 20px; /* Add padding around content */
+    width: 100%;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 20px; /* Footer padding */
+    width: 100%;
+    flex-shrink: 0;
+}
+
+h1, h2 {
+    color: #4b3621; /* Dark Brown */
+}
+
+button {
+    background-color: #4b3621; /* Dark Brown */
+    color: #f4ede4; /* Light Beige */
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6a4b33; /* Slightly lighter brown */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4b3621;
+    color: #f4ede4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f6f1;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+/* Error message styling */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: bold;
+}

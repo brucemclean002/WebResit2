@@ -1,0 +1,12 @@
+<h1>Edit Item</h1>
+<form method="POST" action="/items/edit/{{item._id}}">
+    <label for="name">Item Name:</label>
+    <input type="text" name="name" id="name" value="{{item.name}}" required>
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" required>{{item.description}}</textarea>
+    <label for="price">Price:</label>
+    <input type="number" name="price" id="price" step="0.01" min="0.01" value="{{item.price}}" required>
+    <label for="store">Store Location:</label>
+    <input type="text" name="store" id="store" value="{{item.store}}" required>
+    <button type="submit">Save Changes</button>
+</form>

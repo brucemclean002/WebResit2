@@ -1,0 +1,22 @@
+<h1>Edit User</h1>
+
+{{#error}}
+    <div class="error-message">
+        <p>{{error}}</p>
+    </div>
+{{/error}}
+
+<form method="POST" action="/admin/edit/{{user._id}}">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" value="{{user.email}}" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" placeholder="Leave blank to keep current password">
+    <label for="role">Role:</label>
+    <select name="role" id="role">
+        <option value="user" {{#isUser}}selected{{/isUser}}>User</option>
+        <option value="volunteer" {{#isVolunteer}}selected{{/isVolunteer}}>Volunteer</option>
+        <option value="manager" {{#isManager}}selected{{/isManager}}>Manager</option>
+    </select>
+    <button type="submit">Save Changes</button>
+</form>
+

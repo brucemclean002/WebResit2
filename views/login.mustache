@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<form method="POST" action="/auth/login">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    {{#error}}
+        <p style="color: red;">{{error}}</p>
+    {{/error}}
+    <button type="submit">Login</button>
+</form>
+<p>Don't have an account? <a href="/auth/register">Register</a></p>

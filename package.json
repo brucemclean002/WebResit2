@@ -1,0 +1,19 @@
+{
+  "name": "charity-shop-website",
+  "version": "1.0.0",
+  "description": "A website for charity shops to showcase their products.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-ensure-login": "^0.1.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mustache-express": "^1.3.2",
+    "nedb": "^1.8.0"
+  },
+  "author": "Bruce",
+  "license": "ISC"
+}

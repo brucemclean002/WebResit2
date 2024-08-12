@@ -1,0 +1,24 @@
+<h1>Items</h1>
+{{#error}}
+    <p style="color: red;">{{error}}</p>
+{{/error}}
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Store</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#items}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{description}}</td>
+            <td>{{price}}</td>
+            <td>{{store}}</td>
+        </tr>
+        {{/items}}
+    </tbody>
+</table>
