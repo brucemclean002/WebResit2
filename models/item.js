@@ -1,5 +1,6 @@
+const path = require('path');
 const Datastore = require('nedb');
-const items = new Datastore({ filename: 'db/items.db', autoload: true });
+const items = new Datastore({ filename: path.join(__dirname, 'db/items.db'), autoload: true });
 
 // Item model with methods for CRUD operations
 const Item = {

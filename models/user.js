@@ -1,5 +1,6 @@
+const path = require('path');
 const Datastore = require('nedb');
-const users = new Datastore({ filename: 'db/users.db', autoload: true });
+const users = new Datastore({ filename: path.join(__dirname, 'db/users.db'), autoload: true });
 
 // User model with methods for CRUD operations and finding by email
 const User = {
